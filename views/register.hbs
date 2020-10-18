@@ -1,0 +1,50 @@
+<form action="/register" method="POST">
+    <h1>Register</h1>
+
+    <p>Personal info</p>
+    <label for="usernmae">Username</label>
+    <input id="username" name="username" value="{{username}}" type="text" placeholder="Username">
+
+    {{#if errorUsername}}
+    <section class="notifications">
+        <h6 class="notification-message">{{errorUsername}}</h6>
+    </section>
+    {{/if}}
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" placeholder="******">
+
+    {{#if errorPass}}
+    <section class="notifications">
+        <h6 class="notification-message">{{errorPass}}</h6>
+    </section>
+    {{/if}}
+
+    <label for="repeatPassword">Repeat Password</label>
+    <input id="repeat-password" name="repeatPassword" type="password" placeholder="******">
+    <hr>
+
+    {{#if errorRePass}}
+    <section class="notifications">
+        <h6 class="notification-message">{{errorRePass}}</h6>
+    </section>
+    {{/if}}
+
+    <p>Account</p>
+    <label for="amount">Amount</label>
+    <input id="amount" type="text" name="amount" value="{{amount}}" placeholder="$125.90">
+
+    {{#if errorAmount}}
+    <section class="notifications">
+        <h6 class="notification-message">{{errorAmount}}</h6>
+    </section>
+    {{/if}}
+
+    <button type="submit">Register</button>
+
+    {{#if error}}
+    <section class="notifications">
+        <h6 class="notification-message">{{error}}</h6>
+    </section>
+    {{/if}}
+</form>
